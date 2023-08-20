@@ -1,0 +1,36 @@
+spring.output.ansi.enabled: always
+
+io.rsocket.routing.broker:
+  broker-id: 11111111-1111-1111-1111-111111111111
+  tcp.port: 8001
+  cluster.tcp.port: 7001
+
+logging:
+  level:
+    io.rsocket.routing.broker: DEBUG
+
+#io.rsocket.broker:
+#  uri: tcp://localhost:8012
+#  cluster:
+#    uri: tcp://localhost:7012
+#    monitor.enabled: true
+#  broker-id: 00000000-0000-0000-0000-000000000012
+#  brokers:
+#    - cluster: tcp://localhost:7011
+#      proxy: tcp://localhost:8011
+#
+#logging.level:
+#  io.rsocket.broker: DEBUG
+
+io.rsocket.broker:
+  uri: tcp://localhost:8011
+  cluster:
+    uri: tcp://localhost:7011
+    monitor.enabled: true
+  broker-id: 00000000-0000-0000-0000-000000000011
+#  brokers:
+#    - cluster: tcp://localhost:7011
+#      proxy: tcp://localhost:8011
+
+logging.level:
+  io.rsocket.broker: DEBUG
