@@ -33,6 +33,11 @@ public class MarketDataRSocketController {
         return Mono.empty();
     }
 
+    @MessageMapping("echo")
+    public Mono<String> echo(String marketData) {
+        return Mono.just(marketData);
+    }
+
     @MessageExceptionHandler
     public Mono<MarketData> handleException(Exception e) {
         return Mono.just(MarketData.fromException(e));
